@@ -45,13 +45,12 @@ module GschoolEnumerable
 
 
   def g_select!
-    array = []
     self.g_each do |item|
       if yield(item) == false
-        item.g_reject
+        self.delete(item)
       end
     end
-    array
+
   end
 
 end
