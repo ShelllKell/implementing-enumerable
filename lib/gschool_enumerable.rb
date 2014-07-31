@@ -46,7 +46,8 @@ module GschoolEnumerable
 
   def g_select!
     self.g_each do |item|
-      if yield(item) == false
+      if yield(item)
+      else
         self.delete(item)
       end
     end
